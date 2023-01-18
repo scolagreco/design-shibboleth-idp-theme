@@ -46,6 +46,9 @@
                 </h2>
 
                 <form action="$flowExecutionUrl" method="post">
+		<!-- Injecting anti-CSRF tokens into views 
+https://shibboleth.atlassian.net/wiki/spaces/IDP4/pages/1280180737/Cross-Site+Request+Forgery+CSRF+Protection#%5BinlineExtension%5DInjecting-anti-CSRF-tokens-into-views -->
+		#parse("csrf/csrf.vm")
                     <div class="box">
                         #if ($serviceName)
                             <p>

@@ -69,9 +69,10 @@
                             </form>
 
                             <h3 style="text-align: center">
-                                <a href="$flowExecutionUrl&_eventId=cancel">
-                                    #springMessageText("idp.login.duoCancel",
-                                                       "Cancel this Request")
+	                        <!-- <a href="$flowExecutionUrl&_eventId=cancel"> #springMessageText("idp.login.duoCancel", "Cancel this Request") -->
+				<!-- Injecting anti-CSRF tokens into views
+https://shibboleth.atlassian.net/wiki/spaces/IDP4/pages/1280180737/Cross-Site+Request+Forgery+CSRF+Protection#%5BinlineExtension%5DInjecting-anti-CSRF-tokens-into-views -->				
+				<a href="$flowExecutionUrl&_eventId=cancel#parse("csrf/csrf-qparam.vm")">#springMessageText("idp.login.duoCancel", "Cancel this Request")
                                 </a>
                             </h3>
                         </div>

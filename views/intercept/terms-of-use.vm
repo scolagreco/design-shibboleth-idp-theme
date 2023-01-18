@@ -36,6 +36,9 @@
                 <div class="row">
                     <div class="col-md-6 pt-5 pb-2 py-md-5 px-4 px-md-0 bd-content">
                         <form action="$flowExecutionUrl" method="post">
+	                <!-- Injecting anti-CSRF tokens into views
+https://shibboleth.atlassian.net/wiki/spaces/IDP4/pages/1280180737/Cross-Site+Request+Forgery+CSRF+Protection#%5BinlineExtension%5DInjecting-anti-CSRF-tokens-into-views -->
+        	        #parse("csrf/csrf.vm")
                             <input type="submit"
                                    class="btn btn-danger"
                                    name="_eventId_TermsRejected"
@@ -45,6 +48,9 @@
                     </div>
                     <div class="col-md-6 py-3 py-md-5 px-4 px-md-0 bd-content">
                         <form action="$flowExecutionUrl" method="post" >
+                        <!-- Injecting anti-CSRF tokens into views
+https://shibboleth.atlassian.net/wiki/spaces/IDP4/pages/1280180737/Cross-Site+Request+Forgery+CSRF+Protection#%5BinlineExtension%5DInjecting-anti-CSRF-tokens-into-views -->
+                        #parse("csrf/csrf.vm")
                             <div class="form-check">
                                 <input id="accept"
                                        type="checkbox"
